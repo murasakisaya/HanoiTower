@@ -1,3 +1,4 @@
+<meta name="google-site-verification" content="HTmEbtwW4Cge9SvAroHtn_EzaJmkXtlFpQNKgien4QE" /> 
 import java.util.*;
 class hanoiCount {
 	static int exetime = 0;
@@ -7,12 +8,12 @@ class hanoiCount {
 			return (int)Math.pow(2, d)-1;
 		}else if(d < t){
 			return 2*d-1;
-		//¬dªí
+		//æŸ¥è¡¨
 		}else if(mem[t][d]!=0){
 			return mem[t][d];
 		}else {
 			for(int mid=d-1 ; mid>=t-2 ; mid--) {
-				//­pºâ°õ¦æ´X¦¸(®É¶¡½ÆÂø«×¦ôºâ)
+				//è¨ˆç®—åŸ·è¡Œå¹¾æ¬¡(æ™‚é–“è¤‡é›œåº¦ä¼°ç®—)
 				exetime++;
 				if(mid == d-1) {
 					stepCount = hanoi(mem, stepCount, t,d-mid)*2 + 
@@ -31,12 +32,12 @@ class hanoiCount {
 	}
 	public static void main(String args[]) {
 		Scanner input = new Scanner(System.in);
-		//¬W
+		//æŸ±
 		int tower = input.nextInt();
-		//ºĞ¤l
+		//ç¢Ÿå­
 		int disk = input.nextInt();
 		int t = tower, d = disk, stepCount = 0;
-		//°O¿ıºâ¹Lªº­È¥H«K¤§«á¬dªí
+		//è¨˜éŒ„ç®—éçš„å€¼ä»¥ä¾¿ä¹‹å¾ŒæŸ¥è¡¨
 		int[][] mem = new int[t+1][d+1];
 		
 		System.out.println(tower + " tower " + disk + " disk: "
