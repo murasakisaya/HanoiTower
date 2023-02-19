@@ -1,4 +1,3 @@
-<meta name="google-site-verification" content="HTmEbtwW4Cge9SvAroHtn_EzaJmkXtlFpQNKgien4QE" /> 
 import java.util.*;
 class hanoiCount {
 	static int exetime = 0;
