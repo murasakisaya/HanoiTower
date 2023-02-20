@@ -5,11 +5,23 @@ class hanoiCount {
 		int tmp = 0, stepCount = 0;
 		if(t == 3) {
 			return (int)Math.pow(2, d)-1;
+		}else if (t==4) {
+			//count: a1 ~ an; Power2: 2的次方
+			int disk = d-1, i = 3, count = 5, Power2 = 4;
+			while(disk-i > 0) {
+				disk -= i;
+				count += Power2*i;
+				i++;
+				Power2 *= 2;
+			}
+			count += disk*Power2;
+			mem[t][d] = count;
+			return count;
 		}else if(d < t){
 			return 2*d-1;
-		//查表
 		}else if(mem[t][d]!=0){
 			return mem[t][d];
+		//查表
 		}else {
 			for(int mid=d-1 ; mid>=t-2 ; mid--) {
 				//計算執行幾次(時間複雜度估算)
@@ -43,7 +55,6 @@ class hanoiCount {
 				+ hanoi(mem, tower, disk));
 		System.out.println("execution time: " + exetime);
 		System.out.println("The hanoi table: ");
-		//印出河內塔計算表
 		for(int i=0 ; i<tower ; i++) {
 			for(int j=0 ; j<disk ; j++) {
 				System.out.print(mem[i][j]+" ");
