@@ -1,8 +1,8 @@
 import java.util.*;
 class hanoiCount {
 	static int exetime = 0;
-	public static int hanoi(int mem[][], int stepCount, int t, int d) {
-		int tmp = 0;
+	public static int hanoi(int mem[][], int t, int d) {
+		int tmp = 0, stepCount = 0;
 		if(t == 3) {
 			return (int)Math.pow(2, d)-1;
 		}else if(d < t){
@@ -15,17 +15,17 @@ class hanoiCount {
 				//計算執行幾次(時間複雜度估算)
 				exetime++;
 				if(mid == d-1) {
-					stepCount = hanoi(mem, stepCount, t,d-mid)*2 + 
-							hanoi(mem, stepCount, t-1,mid);
+					stepCount = hanoi(mem, t,d-mid)*2 + 
+							hanoi(mem, t-1,mid);
 				}else {
-					tmp = hanoi(mem, stepCount, t,d-mid)*2 + 
-							hanoi(mem, stepCount, t-1,mid);
+					tmp = hanoi(mem, t,d-mid)*2 + 
+							hanoi(mem, t-1,mid);
 					if(tmp < stepCount) {
 						stepCount = tmp;
-						mem[t][d] = stepCount;
 					}
 				}
 			}
+			mem[t][d] = stepCount;
 			return stepCount;
 		}
 	}
@@ -35,12 +35,20 @@ class hanoiCount {
 		int tower = input.nextInt();
 		//碟子
 		int disk = input.nextInt();
-		int t = tower, d = disk, stepCount = 0;
+
 		//記錄算過的值以便之後查表
-		int[][] mem = new int[t+1][d+1];
+		int[][] mem = new int[tower+1][disk+1];
 		
 		System.out.println(tower + " tower " + disk + " disk: "
-				+ hanoi(mem, stepCount, t, d));
+				+ hanoi(mem, tower, disk));
 		System.out.println("execution time: " + exetime);
+		System.out.println("The hanoi table: ");
+		//印出河內塔計算表
+		for(int i=0 ; i<tower ; i++) {
+			for(int j=0 ; j<disk ; j++) {
+				System.out.print(mem[i][j]+" ");
+			}
+			System.out.println();
+		}
 	}
 }
