@@ -1,6 +1,6 @@
-consider hanoi(n,5) for n >= 4:
+consider hanoi(n,4) for n >= 3:
 n is number of disk & 4 is number of Tower
-a1= hanoi(4,5)=5
+a1= hanoi(3,4)=5
 a2= a1+ 4*1
 a3= a1+ 4*2
 a4= a1+ 4*3
