@@ -9,6 +9,7 @@ class hanoiCount {
 			//count: a1 ~ an; Power2: 2的次方
 			int disk = d-3, i = 3, count = 5, Power2 = 4;
 			while(disk-i >= 0) {
+				exetime++ ;
 				disk -= i;
 				count += Power2*i;
 				i++;
@@ -19,9 +20,9 @@ class hanoiCount {
 			return count;
 		}else if(d < t){
 			return 2*d-1;
+		//查表
 		}else if(mem[t][d]!=0){
 			return mem[t][d];
-		//查表
 		}else {
 			for(int mid=d-1 ; mid>=t-2 ; mid--) {
 				//計算執行幾次(時間複雜度估算)
@@ -55,7 +56,7 @@ class hanoiCount {
 				+ hanoi(mem,tower,disk));
 		System.out.println("execution time: " + exetime);
 		System.out.println("The hanoi table: ");
-		//just to print out part of mem(fewest step)
+		
 		for(int i=1 ; i<tower ; i++) {
 			for(int j=30 ; j<disk ; j++) {
 				System.out.print(mem[i][j]+" ");
