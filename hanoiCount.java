@@ -55,7 +55,7 @@ class hanoiCount {
 				+ hanoi(mem,tower,disk));
 		System.out.println("execution time: " + exetime);
 		System.out.println("The hanoi table: ");
-		
+		//just to print out part of mem(fewest step)
 		for(int i=1 ; i<tower ; i++) {
 			for(int j=30 ; j<disk ; j++) {
 				System.out.print(mem[i][j]+" ");
