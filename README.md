@@ -1,3 +1,3 @@
 # HanoiTower
 This program is to count the lowest step of Hanoi Problem for t Tower d Disk (t >= 3).
-But it has stack overflow problem when d become big
+But it has stack overflow problem when d and t become big
