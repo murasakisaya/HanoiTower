@@ -81,8 +81,6 @@ n is number of disk & m-1 is number of Tower
 hanoiAcc(a,b) = hanoiAcc(a-1,b) + hanoiAcc(a,b-1)
 ---------------------------------------------------------------------------
 beautiful number, exponent of 2 of coeffecient (/\) -> (__) && (/_) -> (\)
-(/) -> Pascal triangle{(1,3,1),(1,4,6,4,1),(1,5,10,10,5,1)...} -> combination
--> ex: hanoi(40,5) = 2^2*C(4,2)+2^3*C(5,2)+2^4*C(6,2)+2^5*(40-6-10-15)
             _____________________________________
 tower = 3:  \1 1 1   1   1   1   1     1       1 /
 tower = 4:   \3 4   5   6   7   8     9      10 /
@@ -94,3 +92,5 @@ tower = 9:        \   28  84   210         /
 tower =10:         \    36  120           /
 tower =11:          \     45             /
 
+(/) -> Pascal triangle{(1,3,1),(1,4,6,4,1),(1,5,10,10,5,1)...} -> combination
+-> ex: hanoi(40,5) = 2^2*C(4,2)+2^3*C(5,2)+2^4*C(6,2)+2^5*(40-6-10-15)
