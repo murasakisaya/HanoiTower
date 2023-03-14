@@ -21,6 +21,17 @@ class hanoiConclusion {
 				if(t == 4) {
 					coef++;
 				}else {
+					/*
+					6 5 4 3 2 1/4 3 2 1/2 1
+					*7/3
+					7 6 5 4 3 2 1/4 3 2 1/3 2 1
+					*8/4
+					8 7 6 5 4 3 2 1/4 3 2 1/4 3 2 1
+
+					4!/2!2! ; 5!/3!2! 5/3
+					5!/3!2! ; 6!/3!3! 6/3
+					6!/4!2! ; 7!/4!3! 7/3
+					*/
 					coef = coef*numerator/denominator;
 					numerator++;
 				}
@@ -33,9 +44,9 @@ class hanoiConclusion {
 	
 	public static void main(String args[]) {
 		Scanner input = new Scanner(System.in);
-		//�W
+		//¬W
 		int tower = input.nextInt();
-		//�Фl
+		//ºÐ¤l
 		int disk = input.nextInt();
 		
 		System.out.println(tower + " tower " + disk + " disk: "
