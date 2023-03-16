@@ -18,18 +18,15 @@ class hanoiConclusion {
 				d -= coef;
 				step += exp*coef;
 				exp *= 2;
-				if(t == 4) {
-					coef++;
-				}else {
-					/*
-					4!/2!2! ; 5!/3!2! 5/3
-					5!/3!2! ; 6!/4!2! 6/4
-					6!/4!2! ; 7!/5!2! 7/5
-					*/
-					numerator++;
-					denominator++;
-					coef = coef*numerator/denominator;
-				}
+				/*
+				4!/2!2! ; 5!/3!2! 5/3
+				5!/3!2! ; 6!/4!2! 6/4
+				6!/4!2! ; 7!/5!2! 7/5
+				*/
+				numerator++;
+				denominator++;
+				coef = coef*numerator/denominator;
+			
 			}
 			step += d*exp;
 			return step;
