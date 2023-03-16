@@ -8,8 +8,8 @@ class hanoiConclusion {
 		}else if(t == 3) {
 			return (int)Math.pow(2, d)-1;
 		}else {
-			int exp=4, step=hanoi(t-1, t), numerator=t, coef=(t-1)*(t-2)/2,
-					denominator=3;
+			int exp=4, step=hanoi(t-1, t), numerator=t-1, coef=(t-1)*(t-2)/2,
+					denominator=2;
 			d -= t-1;
 			while(d-coef >= 0) {
 				exetime++;
@@ -26,21 +26,21 @@ class hanoiConclusion {
 					5!/3!2! ; 6!/4!2! 6/4
 					6!/4!2! ; 7!/5!2! 7/5
 					*/
-					coef = coef*numerator/denominator;
 					numerator++;
+					denominator++;
+					coef = coef*numerator/denominator;
 				}
 			}
 			step += d*exp;
-			System.out.println("step:"+step);
 			return step;
 		}
 	}
 	
 	public static void main(String args[]) {
 		Scanner input = new Scanner(System.in);
-		//¬W
+		//柱
 		int tower = input.nextInt();
-		//ºÐ¤l
+		//碟子
 		int disk = input.nextInt();
 		
 		System.out.println(tower + " tower " + disk + " disk: "
