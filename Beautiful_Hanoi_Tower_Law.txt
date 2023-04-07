@@ -80,7 +80,7 @@ n is number of disk & m-1 is number of Tower
 
 hanoiAcc(a,b) = hanoiAcc(a-1,b) + hanoiAcc(a,b-1)
 ---------------------------------------------------------------------------
-beautiful number, exponent of 2 of coeffecient (/\) -> (__) && (/_) -> (\)
+beautiful number, coeffecient of exponent of 2 (/\) -> (__) && (/_) -> (\)
             _____________________________________
 tower = 3:  \1 1 1   1   1   1   1     1       1 /
 tower = 4:   \3 4   5   6   7   8     9      10 /
